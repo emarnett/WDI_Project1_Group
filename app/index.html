@@ -6,8 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tickey</title>
-    <meta name="description" content="">
+    <title>O's & X's</title>
+    <meta name="description" content="Online Tic Tac Toe">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body>
+  <body data-ng-app="xoApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -24,11 +24,29 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
+  <div class="hero">
+    <header>
+      <h1><span style="color:aquamarine">N</span>oughts &amp; <span style="color:tomato">C</span>rosses...</h1>
+    </header>
+  
+  <div data-ng-view></div>   
+  </div>
 
-    <h1>Hi!</h1>
+
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-localstorage/angular-local-storage.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="scripts/controllers/how_to.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/game.js"></script>
+        <script src="scripts/directives/tickle_me.js"></script>
+
+
         <!-- endbuild -->
 </body>
 </html>
