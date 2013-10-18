@@ -1,8 +1,8 @@
-// 'use strict';
+'use strict';
 
-// angular.module('xoApp')
-//   .controller('MainCtrl', function ($scope, localStorageService) {
+angular.module('xoApp')
+  .controller('MainCtrl', function ($scope, localStorageService) {
     
-//  	localStorageService.add("names", ["Matt", "Eddie"]);
+ 	//localStorageService.add("names", ["Matt", "Eddie"]);
 
-//   });
+  });

@@ -1,0 +1,78 @@
+<div id="timer">
+    <div id="counter">{{counterMinutes}} : {{counterSeconds}}</div>
+    <div id="startStop">
+        <button data-ng-click="startTimer()">Start</button>
+        <button data-ng-click="stopTimer()">Stop</button>
+        <button data-ng-click="refreshTimer()">Reset</button>
+    </div>
+</div>
+
+<div id="gameboard">
+
+    <div class="row">
+        <div class="cell lt" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[0]]" data-ng-click="handleClick(0)">
+            <span data-ng-mouseenter="hover1=true" data-ng-mouseleave="hover1=false" data-ng-class="{hover: hover1}">{{ cells[0] }}</span>
+        </div>
+
+        <div class="cell mt" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[1]]" data-ng-click="handleClick(1)">
+            <span data-ng-mouseenter="hover2=true" data-ng-mouseleave="hover2=false" data-ng-class="{hover: hover2}">{{ cells[1] }}</span>
+        </div>
+
+        <div class="cell rt" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[2]]" data-ng-click="handleClick(2)">
+            <span data-ng-mouseenter="hover3=true" data-ng-mouseleave="hover3=false" data-ng-class="{hover: hover3}">{{ cells[2] }}</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="cell lc" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[3]]" data-ng-click="handleClick(3)">
+            <span data-ng-mouseenter="hover4=true" data-ng-mouseleave="hover4=false" data-ng-class="{hover: hover4}">{{ cells[3] }}</span>
+        </div>
+
+        <div class="cell mc" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[4]]" data-ng-click="handleClick(4)">
+            <span data-ng-mouseenter="hover5=true" data-ng-mouseleave="hover5=false" data-ng-class="{hover: hover5}">{{ cells[4] }}</span>
+        </div>
+
+        <div class="cell rc" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[5]]" data-ng-click="handleClick(5)">
+            <span data-ng-mouseenter="hover6=true" data-ng-mouseleave="hover6=false" data-ng-class="{hover: hover6}">{{ cells[5] }}</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="cell lb" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[6]]" data-ng-click="handleClick(6)">
+            <span data-ng-mouseenter="hover7=true" data-ng-mouseleave="hover7=false" data-ng-class="{hover: hover7}">{{ cells[6] }}</span>
+        </div>
+
+        <div class="cell mb" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[7]]" data-ng-click="handleClick(7)">
+            <span data-ng-mouseenter="hover8=true" data-ng-mouseleave="hover8=false" data-ng-class="{hover: hover8}">{{ cells[7] }}</span>
+        </div>
+
+        <div class="cell rb" data-ng-class="{true: 'x', false: 'o'}[ 'x' == cells[8]]" data-ng-click="handleClick(8)">
+            <span data-ng-mouseenter="hover9=true" data-ng-mouseleave="hover9=false" data-ng-class="{hover: hover9}">{{ cells[8] }}</span>
+        </div>
+    </div>
+</div>
+
+<div id="info">
+    <span id="currentPlayer">{{ info }}</span>
+</div>
+
+<div class="btn" data-ng-show="showRestartButton">
+    <button data-ng-click="refresh()">Restart Game?</button>
+</div>
+
+<!-- <div class="btn"><button data-ng-click="getName()">Name</button></div> -->
+
+<div class="btn">
+    <a href="/#/how_to">
+        <button class="how-btn">How to play</button>
+    </a>
+</div>
+
+<div data-ng-show="showLeaderBoard">
+    <h2>LeaderBoard</h2>
+    <div id="leaderBoard">
+        <div data-ng-repeat="(name, score) in leaderData">
+            <div class="lbhead">{{ name }}:</div>
+            <div class="lbbody" id="xcount">{{ score }}</div>
+        </div>
+    </div></div>

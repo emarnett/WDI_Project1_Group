@@ -284,26 +284,30 @@ function isATie() {
 };*/
 
 angular.module('LocalStorageModule').value('prefix', 'gaDatabase');
-angular.module('xoApp', ['LocalStorageModule'])
-  .config(function ($routeProvider) {
-    $routeProvider
-  .when('/how_to', {
-    templateUrl: 'views/how_to.html',
-    controller: 'HowToCtrl'
-  })
-  .when('/', {
-    templateUrl: 'views/home.html',
-  	controller: 'HomeCtrl'
-  })
-  .when('/game', {
-    templateUrl: 'views/game.html',
-    controller: 'GameCtrl'
-  })
-  .otherwise({
-    redirectTo: '/'
-  })
-})
-
-
-
-
+angular.module('xoApp', ['LocalStorageModule', 'firebase'])
+    .config(function($routeProvider) {
+        $routeProvider
+            .when('/how_to', {
+                templateUrl: 'views/how_to.html',
+                controller: 'HowToCtrl'
+            })
+            .when('/', {
+                templateUrl: 'views/home.html',
+                controller: 'HomeCtrl'
+            })
+            .when('/game', {
+                templateUrl: 'views/game.html',
+                controller: 'GameCtrl'
+            })
+            .when('/match_player', {
+                templateUrl: 'views/match_player.html',
+                controller: 'MatchPlayerCtrl'
+            })
+            .when('/multi_game/:id/:mySymbol', {
+                templateUrl: 'views/multi_game.html',
+                controller: 'MultiGameCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            })
+    })
